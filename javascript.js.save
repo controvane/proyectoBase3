@@ -1,0 +1,44 @@
+//registrar un evento clic al botón buscar y que ejecute la función buscar() cuando sea presionado.
+window.onload = function(){
+        $("#btn-buscar").on( "click", function() {
+                buscar();
+        });
+//registrar un evento clic al botón buscar y que ejecute la función buscar() cuando sea presionado.
+window.onload = function(){
+        $("#btn-buscar").on( "click", function() {
+                buscar();
+        });
+}
+    //La función buscar realiza la llamada Ajax que ejecutar el archivo buscar.php, y en caso de ser exitosa, obtiene la respuesta como objeto html y agrega el contenido al elemento con el ID “datos” de la página.
+function buscar(){
+        var nombre = $("#buscar").val();
+
+        $.ajax( 
+        {
+                type: "POST",
+                url: "buscar.php",
+                data: {
+                        buscar: nombre
+                },
+                success: function(html) {
+                        $("#datos").html(html);
+                }
+        });
+
+}
+    //La función buscar realiza la llamada Ajax que ejecutar el archivo buscar.php, y en caso de ser exitosa, obtiene la respuesta como objeto html y agrega el contenido al elemento con el ID “datos” de la página.
+function buscar(){
+        var nombre = $("#buscar").val();
+
+        $.ajax( 
+        {
+                type: "POST",
+                url: "buscar.php",
+                data: {
+                        buscar: nombre
+                },
+                success: function(html) {
+                        $("#datos").html(html);
+                }
+        });
+
